@@ -1,0 +1,26 @@
+<div class="login_con register_con">
+    <p class="zhuce">已有账号？<a routerLink="/login">立即登录</a></p>
+    <div class="logo"><img src="assets/images/login_logo.png" width="214"></div>
+    <form action="" id="loginForm" (ngSubmit)="onSubmit(user)" novalidate [formGroup]='user'>
+      <div class="item form-group">
+        <input type="text" class="username text" placeholder="请输入正确的手机号进行注册" required [(ngModel)]="userName"  formControlName="name">
+        <p class="tips" *ngIf="user.hasError('required','name') && user.get('name').touched">用户名不能为空</p>
+        <p class="tips" *ngIf="user.hasError('mobile','name') && user.get('name').touched && !user.get('name').hasError('required') ">{{user.getError('mobile', 'name')?.info}}</p>
+      </div>
+      <div formGroupName="password">
+          <div class="item form-group">
+            <input type="password"  required class="psd text"   placeholder="请输入密码,密码个数为6-12位"  formControlName="pass1">
+            <p class="tips" *ngIf="user.hasError('required','password.pass1') && user.get('password.pass1').touched">密码不能为空</p>
+            <p class="tips" *ngIf="(user.hasError('minlength','password.pass1') || user.hasError('maxlength','password.pass1') ) && user.get('password.pass1').touched && !user.hasError('required','password.pass1')">
+              密码必须是6-12位字符
+            </p>
+          </div>
+          <div class="item form-group">
+            <input type="password"   required class="psd text" placeholder="请确认密码，确保两次输入的一样"  name="pass2" formControlName="pass2">
+            <p class="tips" *ngIf="user.hasError('passValidator','password') && user.get('password.pass2').touched ">{{user.getError('passValidator','password')?.info}}</p>
+          </div>
+      </div>
+      <input type="submit" value="提交" class="btn" >
+    </form>
+</div>
+    

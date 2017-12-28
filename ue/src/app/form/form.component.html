@@ -1,0 +1,21 @@
+<div class="login_con register_con">
+    <p class="zhuce">已有账号？<a routerLink="/login">立即登录</a></p>
+    <div class="logo"><img src="assets/images/login_logo.png" width="214"></div>
+    <form action="" id="biaodan" novalidate (ngSubmit)="onSubmit()">
+      <div class="item form-group">
+        <input type="text" class="username text" phone tip="用户名" placeholder="请输入正确的手机号进行注册" required>
+        <p class="tips"></p>
+     </div>
+      <div class="item form-group">
+        <input type="password" tips="密码" min="6" maxlen="12" name="pass1" required class="psd text"  placeholder="请输入密码,密码个数为6-12位"  >
+        <p class="tips"></p>
+      </div>
+      <div class="item form-group">
+        <input type="password" tips="确认密码" rep="pass1"  required class="psd text" placeholder="请确认密码，确保两次输入的一样"  >
+        <p class="tips" ></p>
+      </div>
+
+      <input type="submit" value="提交" class="btn" >
+    </form>
+</div>
+    

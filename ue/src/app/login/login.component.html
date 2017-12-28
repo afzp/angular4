@@ -1,0 +1,17 @@
+<div class="login_con">
+    <p class="zhuce">还没有账号？<a routerLink="/register">立即注册</a></p>
+    <div class="logo"><img src="assets/images/login_logo.png" width="214"></div>
+    <form action="" id="loginForm" (ngSubmit)="onSubmit(user)" novalidate [formGroup]='user'>
+      <div class="item form-group">
+        <input type="text" class="username text" required [(ngModel)]="userName"  formControlName="name">
+        <p class="tips" *ngIf="user.get('name').hasError('required') && user.get('name').touched">用户名不能为空</p>
+        <p class="tips" *ngIf="user.hasError('mobile','name') && user.get('name').touched && !user.get('name').hasError('required') ">{{user.getError('mobile', 'name')?.info}}</p>
+      </div>
+      <div class="item form-group">
+        <input type="password"  tip="密码"  required class="psd text"  formControlName="password">
+        <p class="tips" *ngIf="user.get('password').hasError('required') && user.get('password').touched">密码不能为空</p>
+      </div>
+      <input type="submit" value="提交" class="btn" [disabled]="user.invalid">
+    </form>
+    
+</div>
