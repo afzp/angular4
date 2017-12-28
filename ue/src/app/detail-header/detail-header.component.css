@@ -1,0 +1,8 @@
+header.detail .return{padding:10px 0;display:inline-block; }
+header.detail .return span{display: inline-block;overflow: hidden;background: url(../../assets/images/icon.png) no-repeat -0px -30px;
+background-size: 60px 120px;width: 30px; height: 30px;}
+header.detail .rigister{ margin-top:10px; border-radius:3px;width:30px;height:30px;display: inline-block;overflow: hidden;background:#6bc30d url(../../assets/images/icon.png) no-repeat -30px -30px;background-size: 60px 120px;}
+header.detail .user{margin-left:50px; line-height: 50px; color:#9b9b9c}
+header.detail .user img,header.detail .user span{ vertical-align: middle}
+header.detail .user img{width: 30px; height: 30px; border-radius: 30px; margin-right: 10px;}
+
